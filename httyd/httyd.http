@@ -1,0 +1,6 @@
+@httyd_HostAddress = http://localhost:5075
+
+GET {{httyd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
