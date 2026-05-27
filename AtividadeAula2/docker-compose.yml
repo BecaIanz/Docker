@@ -1,0 +1,24 @@
+services:
+  api:
+
+    build: .
+  
+    env_file:
+      - .env
+
+    ports:
+      - 1819:5290
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+
+    environment: 
+      ACCEPT_EULA: Y 
+      MSSQL_PID: Developer
+      MSSQL_SA_PASSWORD: 821hs91ukd_uwq&1*9j
+
+    volumes:
+      - panetones:/var/opt/mssql
+
+volumes:
+  panetones:

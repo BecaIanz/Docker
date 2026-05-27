@@ -1,0 +1,9 @@
+services:
+  api:
+    build:
+      dockerfile: Backend
+      context: ./
+    enviroment:
+      - name=value
+    ports:
+      - 5290:1818
