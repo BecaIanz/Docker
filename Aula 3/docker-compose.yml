@@ -1,5 +1,13 @@
 services:
+  client1:
+    image: client:latest
   
+  client2:
+    image: client:latest
+
+  client3:
+    image: client:latest
+    
   maestro:
     image: nginx:latest
 
@@ -20,3 +28,4 @@ services:
   api3:
     image: hashicorp/http-echo
     command: "-text='MENSAGEM DA API 3'"
+

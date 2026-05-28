@@ -1,0 +1,15 @@
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\obj\Debug\net9.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\obj\Debug\net9.0\Client.AssemblyInfoInputs.cache
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\obj\Debug\net9.0\Client.AssemblyInfo.cs
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\obj\Debug\net9.0\Client.csproj.CoreCompileInputs.cache
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\obj\Debug\net9.0\Client.sourcelink.json
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\bin\Debug\net9.0\Client.exe
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\bin\Debug\net9.0\Client.deps.json
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\bin\Debug\net9.0\Client.runtimeconfig.json
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\bin\Debug\net9.0\Client.dll
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\bin\Debug\net9.0\Client.pdb
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\obj\Debug\net9.0\Client.dll
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\obj\Debug\net9.0\refint\Client.dll
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\obj\Debug\net9.0\Client.pdb
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\obj\Debug\net9.0\Client.genruntimeconfig.cache
+C:\Users\disrct\Desktop\Docker\Aula 3\Client\obj\Debug\net9.0\ref\Client.dll
