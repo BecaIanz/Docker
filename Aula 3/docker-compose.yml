@@ -1,0 +1,22 @@
+services:
+  
+  maestro:
+    image: nginx:latest
+
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    
+    ports:
+      - 1819:80
+
+  api1:
+    image: hashicorp/http-echo
+    command: "-text='MENSAGEM DA API 1'"
+  
+  api2:
+    image: hashicorp/http-echo
+    command: "-text='MENSAGEM DA API 2'"
+
+  api3:
+    image: hashicorp/http-echo
+    command: "-text='MENSAGEM DA API 3'"

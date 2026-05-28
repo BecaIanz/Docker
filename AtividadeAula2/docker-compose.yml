@@ -20,5 +20,11 @@ services:
     volumes:
       - panetones:/var/opt/mssql
 
+
+
+  worker0X:
+    image: hashicorp/http-echo
+    command: "-text='MENSAGEM DO WOKRKER X'"
+
 volumes:
   panetones:
