@@ -1,0 +1,16 @@
+FROM node:20
+
+WORKDIR /iduca
+
+ENV HTTP_PROXY="http://host.docker.internal:3128"
+ENV HTTPS_PROXY="http://host.docker.internal:3128"
+
+COPY ./Code/Frontend/package.json ./
+
+RUN npm install
+
+COPY ./Code/Frontend ./
+
+CMD [ "npm", "run", "dev" ]
+
+EXPOSE 3000

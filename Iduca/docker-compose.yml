@@ -1,0 +1,39 @@
+services:
+  api:
+    build: 
+      dockerfile: Backend
+      context: .
+
+    ports: 
+      - 8000:5284
+
+    env_file:
+      - .env
+  
+  db:
+    image: mysql:latest
+    
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=iduca
+      - MYSQL_USER=iduca_admin
+      - MYSQL_PASSWORD=admin*123
+
+    volumes:
+      - Iduca:/var/lib/mysql
+
+  ui:
+    # image: ui
+    ports:
+      - 2000:3000
+    build: 
+      dockerfile: Frontend
+      context: .
+
+    environment:
+      - NEXT_PUBLIC_API_HOST=localhost
+      - NEXT_PUBLIC_API_PORT=8000
+      - NEXT_PUBLIC_API_ENP=api
+  
+volumes:
+  Iduca:

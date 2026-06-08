@@ -1,0 +1,29 @@
+FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS build
+
+WORKDIR /iduca
+
+ENV HTTP_PROXY="host.docker.internal:3128"
+ENV HTTPS_PROXY="host.docker.internal:3128"
+
+COPY ./Code/Backend/*.sln ./
+
+COPY ./Code/Backend/Iduca.Api/Iduca.Api.csproj ./Iduca.Api/
+COPY ./Code/Backend/Iduca.Application/Iduca.Application.csproj ./Iduca.Application/
+COPY ./Code/Backend/Iduca.Domain/Iduca.Domain.csproj ./Iduca.Domain/
+COPY ./Code/Backend/Iduca.Persistence/Iduca.Persistence.csproj ./Iduca.Persistence/
+
+RUN dotnet restore
+
+COPY ./Code/Backend ./
+
+# RUN dotnet publish -c Release -o /iduca/publish
+
+# FROM mcr.microsoft.com/dotnet/aspnet:9.0-alpine
+
+# WORKDIR /iduca 
+# COPY --from=build /iduca/publish .
+
+CMD [ "dotnet", "run", "--urls=http://0.0.0.0:5284", "--project", "Iduca.Api" ]
+# ENTRYPOINT [ "dotnet", "/Code/Backend.dll" ]
+
+EXPOSE 5284
