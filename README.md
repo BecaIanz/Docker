@@ -127,3 +127,21 @@ volumes:
 ```
 
 importante colocar isso aqui na mesma camada do service para o volume ser criado
+
+
+### Comandos
+
+docker build -t imagemlegal:latest .
+
+docker compose up -d
+
+docker compose up --build
+
+docker compose up -d --build
+
+docker compose ps -> visualizar containers
+
+docker compose down -> derruba todo o compose permanentemente, encerrando todos os containers
+se passar -v até os volumes são encerrados
+
+docker compose logs
