@@ -1,0 +1,16 @@
+Competências
+
+----------------------------------------------------------------
+| Competência                                         |  Peso  |
+| --------------------------------------------------- | ------ |
+| Criar Dockerfiles                                   |      3 | OK
+| Configurar docker-compose para múltiplos containers |      3 | OK
+| Configurar gestão de Persistência                   |      2 | OK
+| Configurar NGINX                                    |      1 | OK
+| Configurar o docker-compose.yml para integrar NGINX |      1 | OK
+| Aplicar Mult-Stage-Building                         |      2 | OK
+| Aplicar imagens otimizadas Alpine                   |      2 | OK
+| Aplicar Rootless                                    |      1 | OK
+| Aplicar o uso do DNS interno                        |      1 |
+| Aplicar isolamento de redes entre containers        |      1 |
+----------------------------------------------------------------

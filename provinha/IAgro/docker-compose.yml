@@ -1,0 +1,63 @@
+services:
+
+  api:
+    image: iagro-api
+
+    # build: 
+    #   dockerfile: Backend
+    #   context: .
+
+    # depends_on:
+    #   - db
+
+    networks:
+      - backend
+
+    ports: 
+      - 8000:5215
+
+    env_file:
+      - .env
+
+  maestro:
+    image: nginx:latest
+
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    
+    ports:
+      - 1819:1018
+
+  db:
+    image: postgis/postgis:16-3.4
+    
+    environment:
+      - POSTGRES_USER=admin@mail.com
+      - POSTGRES_PASSWORD=Admin123456
+      - POSTGRES_DB=iagro
+
+    networks:
+      - backend
+
+    volumes:
+      - IAgro:/var/lib/postgres
+
+  ui:
+    image: iagro-ui
+
+    ports:
+      - 2000:5173
+    # build: 
+    #   dockerfile: Frontend
+    #   context: .
+
+    environment:
+      - VITE_API_PORT=1018
+      - VITE_API_HOST=localhost
+      - VITE_API_ENDPOINT=api/
+  
+volumes:
+  IAgro:
+
+networks:
+  backend:

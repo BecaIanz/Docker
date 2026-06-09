@@ -1,0 +1,16 @@
+FROM node:20
+
+WORKDIR /iagro
+
+ENV HTTP_PROXY="http://host.docker.internal:3128"
+ENV HTTPS_PROXY="http://host.docker.internal:3128"
+
+COPY ./Code/IAgroUI/package.json ./
+
+RUN npm install --legacy-peer-deps
+
+COPY ./Code/IAgroUI ./
+
+CMD [ "npm", "run", "dev" ]
+
+EXPOSE 5173

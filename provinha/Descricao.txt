@@ -1,0 +1,12 @@
+Avaliação
+
+Seu objetivo é aplicar o projeto "IAgro" dentro de containers, sendo orquestrado
+corretamente. Aplique os conhecimentos desenvolvidos durante as aulas.
+Para isso não é necessário fazer mult-stage-building para o frontend.
+Tanto o frontend quanto o backend nao devem ser expostos para o host, e sim
+acessados através do NGINX
+
+
+Ao fim, publique as imagens do Backend e do Frontend no seu DockerHub, mantenha os
+arquivos para serem avaliados, mas no seu compose passe a usar suas próprias imagens,
+sem depender dos arquivos locais.

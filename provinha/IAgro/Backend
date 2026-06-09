@@ -1,0 +1,32 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
+
+WORKDIR /iagro
+
+ENV HTTP_PROXY="host.docker.internal:3128"
+ENV HTTPS_PROXY="host.docker.internal:3128"
+
+COPY ./Code/IAgroAPI/*.sln ./
+
+Copy ./Code/IAgroAPI/IAgro.Api/*.csproj ./IAgro.Api/
+Copy ./Code/IAgroAPI/IAgro.Application/*.csproj ./IAgro.Application/
+Copy ./Code/IAgroAPI/IAgro.Domain/*.csproj ./IAgro.Domain/
+Copy ./Code/IAgroAPI/IAgro.Persistence/*.csproj ./IAgro.Persistence/
+
+RUN dotnet restore
+
+COPY ./Code/IAgroAPI ./
+
+RUN dotnet publish -c Release -o /iagro/publish
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine
+
+WORKDIR /iagro
+
+RUN addgroup -S iagrogrupo && adduser -S iagrouser -G iagrogrupo
+
+COPY --from=build --chown=iagrouser:iagrogrupo /iagro/publish ./
+
+ENTRYPOINT ["dotnet", "IAgro.Api.dll"]
+CMD [ "dotnet", "run", "--urls=http://0.0.0.0:5215", "--project", "IAgro.Api" ]
+
+EXPOSE 5215
